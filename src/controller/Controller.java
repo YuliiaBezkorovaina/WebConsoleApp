@@ -1,6 +1,6 @@
 package controller;
 
-import model.Game;
+import model.toys.Game;
 import model.GameRoom;
 import view.View;
 
@@ -26,7 +26,7 @@ public class Controller {
         gameRoom.addDoll();
         for (Game toy: gameRoom.getToys()
              ) {
-            toy.play(view);
+            view.play(toy.play());
 
         }
     }
