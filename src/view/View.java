@@ -13,9 +13,9 @@ public class View {
 
     static {
         bundle = ResourceBundle.getBundle("language",
-                new Locale("ua", "UA"));
+                //new Locale("ua", "UA"));
                 //new Locale("en", "USA"));
-                //new Locale("ru", "RU"));
+                new Locale("ru", "RU"));
     }
 
     public void play(Game game){

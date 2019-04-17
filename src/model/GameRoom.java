@@ -2,9 +2,9 @@ package model;
 
 import java.util.LinkedList;
 
-public class Model {
+public class GameRoom {
 LinkedList<Game> toys;
-public Model(){this.toys = new LinkedList<Game>();}
+public GameRoom(){this.toys = new LinkedList<Game>();}
 
 public void addBall(){toys.add(new Ball());}
 public  void addDoll(){toys.add(new Doll());}

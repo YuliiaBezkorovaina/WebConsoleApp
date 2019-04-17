@@ -2,8 +2,8 @@ package model;
 
 import view.View;
 
-public class Ball implements Game {
-    private int price;
+public class Ball extends Toy implements Game {
+
     @Override
     public void play(View view) {
         view.play(this);
@@ -11,6 +11,6 @@ public class Ball implements Game {
 
     @Override
     public int price() {
-        return price;
+        return -1;
     }
 }

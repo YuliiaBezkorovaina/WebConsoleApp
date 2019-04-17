@@ -1,12 +1,12 @@
 import controller.Controller;
-import model.Model;
+import model.GameRoom;
 import view.View;
 
 public class Main {
     public static void main(String[] args) {
-        Model model = new Model();
+        GameRoom gameRoom = new GameRoom();
         View view = new View();
-        Controller controller = new Controller(model, view);
+        Controller controller = new Controller(gameRoom, view);
         controller.run();
     }
 }

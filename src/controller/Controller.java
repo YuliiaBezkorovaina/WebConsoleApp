@@ -1,30 +1,30 @@
 package controller;
 
 import model.Game;
-import model.Model;
+import model.GameRoom;
 import view.View;
 
 public class Controller {
-    Model model;
+    GameRoom gameRoom;
     View view;
 
     /**
      *
-     * @param model instance of class Model
-     *               @see model.Model
+     * @param gameRoom instance of class GameRoom
+     *               @see GameRoom
      * @param view instance of class View
      * @see view.View
      */
-    public Controller(Model model, View view) {
-        this.model = model;
+    public Controller(GameRoom gameRoom, View view) {
+        this.gameRoom = gameRoom;
         this.view = view;
     }
     public void run(){
-        model.addBall();
-        model.addBall();
-        model.addCar();
-        model.addDoll();
-        for (Game toy: model.getToys()
+        gameRoom.addBall();
+        gameRoom.addBall();
+        gameRoom.addCar();
+        gameRoom.addDoll();
+        for (Game toy: gameRoom.getToys()
              ) {
             toy.play(view);
 

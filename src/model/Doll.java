@@ -3,7 +3,7 @@ package model;
 import view.View;
 
 public class Doll implements Game {
-    private int price;
+
 
     @Override
     public void play(View view) {
@@ -12,6 +12,6 @@ public class Doll implements Game {
 
     @Override
     public int price() {
-        return price;
+        return -1;
     }
 }

@@ -1,8 +1,10 @@
 package model;
 
+import com.sun.istack.internal.NotNull;
 import view.View;
 
 public interface Game {
     public int price();
-    public void play(View view);
+    @NotNull
+    void play(View view);
 }
