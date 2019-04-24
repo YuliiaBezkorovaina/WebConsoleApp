@@ -29,12 +29,6 @@ private String Name;
     }
 
     @Override
-    public String toString() {
-        return "age " + age +
-                " Name is " + Name;
-    }
-
-    @Override
     public void play(@NotNull Toy toy) {
         toy.play();
     }
