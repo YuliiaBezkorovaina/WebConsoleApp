@@ -7,7 +7,6 @@ import model.toys.*;
 import model.GameRoom;
 import view.View;
 
-import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Controller {
@@ -26,21 +25,27 @@ public class Controller {
         this.view = view;
     }
     public void run(){
-        gameRoom.addToy(new Toy());
+        /*for(int i = 0; i < 13; i++) {
+            Toy newToy = new Toy();
+           newToy.setSizeToys(SizeToys.values()[i % 3]);
+           newToy.setType(TypeToys.values()[i % 3]);
+            gameRoom.addToy(newToy);
+        }
+        //gameRoom.getToys().forEach(System.out::println);
 
 
         LinkedList<Child> children = new LinkedList<>();
-        children.add(new Child(Age.LITTLE, "Vasia"));
-        children.add(new Child(Age.AVERAGE, "Maria"));
-        children.add(new Child(Age.AVERAGE, "John"));
-        gameRoom.setChildrens(children);
 
-        /*gameRoom.getChildrens().stream()
-                .filter(i -> i.getAge()==Age.LITTLE)
-                .forEach(child -> child.play(gameRoom.getToys().stream().filter(t->(t.isPlaying()==false && t.getTypeToy()==SizeToys.SMALL))));
-*/
+        for(int i = 0; i < 13; i++) {
+            Child newChild = new Child(Age.values()[i % 3], new Integer(i).toString());
+            gameRoom.setChild(newChild);
+        }
+
+        gameRoom.getChildrens().forEach(System.out::println);
+
+
         for (Game toy: gameRoom.getToys()) {
-            //view.play(toy.play());
+            view.play(toy.play());
         }
 
         for (Play child:gameRoom.getChildrens()
@@ -48,6 +53,6 @@ public class Controller {
 
         }
 
-        gameRoom.getToys().stream().filter(t->t.getTypeToy()==SizeToys.SMALL).forEach(System.out::println);
+        gameRoom.getToys().stream().filter(t->t.getSizeToy()==SizeToys.SMALL).forEach(System.out::println);*/
     }
 }

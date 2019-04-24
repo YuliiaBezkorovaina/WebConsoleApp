@@ -9,8 +9,8 @@ public class View {
     static {
         bundle = ResourceBundle.getBundle("language",
                 //new Locale("ua", "UA"));
-                //new Locale("en", "USA"));
-                new Locale("ru", "RU"));
+                new Locale("en", "USA"));
+                //new Locale("ru", "RU"));
     }
 
     public void play(String gamePlay){

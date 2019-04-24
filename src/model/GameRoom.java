@@ -8,7 +8,10 @@ public class GameRoom {
     LinkedList<Game> toys;
     LinkedList<Child> childrens;
 
-    public GameRoom(){this.toys = new LinkedList<Game>();}
+    public GameRoom(){
+        this.toys = new LinkedList<Game>();
+        this.childrens = new LinkedList<Child>();
+    }
 
     public void addToy(Game toy){toys.add(toy);}
 
