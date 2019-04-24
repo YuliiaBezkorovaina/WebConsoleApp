@@ -20,9 +20,4 @@ private String Name;
         return Name;
     }
 
-    @Override
-    public void play(Toy toy) {
-        toy.play();
-    }
-
 }

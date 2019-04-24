@@ -14,14 +14,6 @@ public abstract class Toy implements Game, Comparable{
         return play;
     }
 
-    public void setPlay(boolean play) {
-        this.play = play;
-    }
-
-    public void setSizeToys(SizeToys size){
-        this.sizeToys = size;
-    }
-
     @Override
     public SizeToys getSizeToy() {
         return sizeToys;

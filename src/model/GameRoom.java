@@ -6,7 +6,7 @@ import model.toys.Game;
 import java.util.LinkedHashMap;
 
 public class GameRoom {
-    LinkedHashMap<Player, Game>  game = new LinkedHashMap<>();
+    private LinkedHashMap<Player, Game>  game ;
 
     public GameRoom() {
         this.game = new LinkedHashMap<>();
