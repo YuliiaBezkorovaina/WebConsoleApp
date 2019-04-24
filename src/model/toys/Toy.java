@@ -1,8 +1,13 @@
 package model.toys;
 
-public abstract class Toy implements Game{
+public abstract class Toy implements Game, Comparable{
      private SizeToys sizeToys;
      private boolean play;
+
+    public Toy(SizeToys sizeToys, boolean play) {
+        this.sizeToys = sizeToys;
+        this.play = play;
+    }
 
     @Override
     public boolean isPlaying() {
@@ -13,15 +18,20 @@ public abstract class Toy implements Game{
         this.play = play;
     }
 
+    public void setSizeToys(SizeToys size){
+        this.sizeToys = size;
+    }
+
     @Override
     public SizeToys getSizeToy() {
         return sizeToys;
     }
 
-    public SizeToys getSizeToys() {
-        return sizeToys;
+    @Override
+    public int compareTo(Object o) {
+        if (this == o) return 0;
+        Toy t = (Toy)o;
+        if (this.getClass().toString().compareTo(t.getClass().toString())==0) return this.sizeToys.compareTo(t.sizeToys);
+        return this.getClass().toString().compareTo(t.getClass().toString());
     }
-
-
-
 }

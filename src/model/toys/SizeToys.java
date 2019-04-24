@@ -1,5 +1,5 @@
 package model.toys;
 
 public enum SizeToys {
-    BIG, AVERAGE, SMALL
+    SMALL, AVERAGE, BIG
 }

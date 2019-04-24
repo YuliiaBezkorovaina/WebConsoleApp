@@ -1,9 +1,8 @@
 package model.children;
 
-import com.sun.istack.internal.NotNull;
 import model.toys.Toy;
 
-public class Child implements Play{
+public class Child implements Player {
 private Age age;
 private String Name;
 
@@ -11,25 +10,18 @@ private String Name;
         this.age = age;
         Name = name;
     }
-
+    @Override
     public Age getAge() {
         return age;
     }
 
-    public void setAge(Age age) {
-        this.age = age;
-    }
-
+    @Override
     public String getName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
     @Override
-    public void play(@NotNull Toy toy) {
+    public void play(Toy toy) {
         toy.play();
     }
 

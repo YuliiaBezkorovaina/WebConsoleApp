@@ -1,13 +1,13 @@
 package controller;
 
-import model.children.Age;
-import model.children.Child;
-import model.children.Play;
-import model.toys.*;
 import model.GameRoom;
+import model.children.Child;
+import model.children.Player;
+import model.toys.Ball;
+import model.toys.Game;
+import model.toys.SizeToys;
+import model.toys.Toy;
 import view.View;
-
-import java.util.LinkedList;
 
 public class Controller {
     GameRoom gameRoom;
@@ -25,34 +25,55 @@ public class Controller {
         this.view = view;
     }
     public void run(){
-        /*for(int i = 0; i < 13; i++) {
-            Toy newToy = new Toy();
-           newToy.setSizeToys(SizeToys.values()[i % 3]);
-           newToy.setType(TypeToys.values()[i % 3]);
-            gameRoom.addToy(newToy);
-        }
-        //gameRoom.getToys().forEach(System.out::println);
+        GameRoom gameroom = new GameRoom();
 
-
-        LinkedList<Child> children = new LinkedList<>();
-
-        for(int i = 0; i < 13; i++) {
-            Child newChild = new Child(Age.values()[i % 3], new Integer(i).toString());
-            gameRoom.setChild(newChild);
-        }
-
-        gameRoom.getChildrens().forEach(System.out::println);
-
-
-        for (Game toy: gameRoom.getToys()) {
-            view.play(toy.play());
-        }
-
-        for (Play child:gameRoom.getChildrens()
+        for (Info info: Info.values()
              ) {
-
+            gameroom.setGame(new Child(info.getAge(), info.getNameChild()), info.getToy());
         }
+        System.out.println(View.bundle.getString("ALL_PRINT"));
+        gameroom.getGame().forEach((k,v)->System.out.println(
+                View.bundle.getString(k.getAge().name())+
+                        " "+
+                k.getName()+
+                " "+
+                View.bundle.getString(v.play())+" "+
+                View.bundle.getString(v.getSizeToy().name())+" "+
+                View.bundle.getString(v.getClass().toString().replace("class ","").toUpperCase())));
 
-        gameRoom.getToys().stream().filter(t->t.getSizeToy()==SizeToys.SMALL).forEach(System.out::println);*/
+        System.out.println(View.bundle.getString("BEFORE_SORT"));
+        gameroom.
+                getGame().
+                values().
+                stream().
+                forEach(v->System.out.println(
+                        View.bundle.getString(v.getClass().toString().replace("class ","").toUpperCase())+
+                                " "+
+                                View.bundle.getString(v.getSizeToy().name()))
+                );
+
+        System.out.println(View.bundle.getString("AFTER_SORT"));
+        gameroom.
+                getGame().
+                values().
+                stream().
+                sorted().
+                forEach(v->System.out.println(
+                        View.bundle.getString(v.getClass().toString().replace("class ","").toUpperCase())+
+                                " "+
+                                View.bundle.getString(v.getSizeToy().name()))
+                );
+        System.out.println(View.bundle.getString("ALON"));
+        gameroom.
+                getGame().
+                values().
+                stream().
+                filter(i->i.isPlaying()== false).
+                forEach(v-> System.out.println(
+                        View.bundle.getString(v.getClass().toString().replace("class ","").toUpperCase())
+                        )
+                );
     }
+
+
 }

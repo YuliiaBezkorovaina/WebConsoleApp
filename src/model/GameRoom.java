@@ -1,29 +1,22 @@
 package model;
 
-import model.children.Child;
+import model.children.Player;
 import model.toys.Game;
-import java.util.LinkedList;
+
+import java.util.LinkedHashMap;
 
 public class GameRoom {
-    LinkedList<Game> toys;
-    LinkedList<Child> childrens;
+    LinkedHashMap<Player, Game>  game = new LinkedHashMap<>();
 
-    public GameRoom(){
-        this.toys = new LinkedList<Game>();
-        this.childrens = new LinkedList<Child>();
+    public GameRoom() {
+        this.game = new LinkedHashMap<>();
     }
 
-    public void addToy(Game toy){toys.add(toy);}
+    public void setGame(Player child, Game toy){
+       game.put(child, toy);
+   }
 
-    public LinkedList<Game> getToys(){return toys;}
-
-    public LinkedList<Child> getChildrens() {
-        return childrens;
+    public LinkedHashMap<Player, Game> getGame() {
+        return game;
     }
-
-    public void setChildrens(LinkedList<Child> childrens) {
-        this.childrens = childrens;
-    }
-
-    public void setChild(Child child){this.childrens.add(child);}
 }

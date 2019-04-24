@@ -12,8 +12,4 @@ public class View {
                 new Locale("en", "USA"));
                 //new Locale("ru", "RU"));
     }
-
-    public void play(String gamePlay){
-        System.out.println(bundle.getString(gamePlay));
-    }
 }
